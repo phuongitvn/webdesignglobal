@@ -5,25 +5,11 @@ class Menu extends CWidget
 	public $_item_active = null;
 	public $_url = NULL;
 	public $_gmid = '';// group id
+	public $_style = 'style1';
 	public function init()
 	{
-		$dir = dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
+		$dir = dirname(__FILE__).DS.'assets'.DS.$this->_style;
 		$this->_url = Yii::app()->getAssetManager()->publish($dir,false,-1,YII_DEBUG);
-		$cs = Yii::app()->getClientScript();
-		$cs->registerCssFile("{$this->_url}/css/superfish.css");
-		$cs->registerScriptFile("{$this->_url}/js/hoverIntent.js");
-		$cs->registerScriptFile("{$this->_url}/js/superfish.js");
-		
-		$cs->registerScript(
-				'menutop',
-				'var example = $("#mntop").superfish({
-					delay: 10,
-					speed: \'fast\',
-				//add options here if required
-				});',
-				CClientScript::POS_READY
-		);
-		
 		parent::init();
 	}
 	public function run()
@@ -60,7 +46,7 @@ class Menu extends CWidget
 		//echo '<pre>';print_r($data);die();
 		$items = $this->getList($data);
 		
-		$this->render('default', array('active'=>$this->_active, 'items'=>$items));
+		$this->render($this->_style, array('active'=>$this->_active, 'items'=>$items));
 		$this->endCache();
 		}
 	}

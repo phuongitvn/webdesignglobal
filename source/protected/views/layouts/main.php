@@ -1,7 +1,4 @@
-<?php 
-require_once '_header.php';
-?>
-<?php //$this->widget('application.widgets.Menu.Menu', array('_item_active'=>$this->activemenu,'_gmid'=>1));?>
+<?php require_once '_header.php';?>
 <body class="inner">
 	<!-- wrapper -->
 	<div id="wrapper">
@@ -25,32 +22,28 @@ require_once '_header.php';
 						</div>
 					</div>
 					<!-- nav-box -->
-					<nav class="nav-box">
-						<!-- nav -->
-						<ul id="nav">
-							<li class="active"><a href="./index.html">Home</a>
-								<ul>
-									<li><a>1</a></li>
-									<li><a>1</a></li>
-								</ul>
-							</li>
-							<li><a href="software.html">Software</a></li>								
-							<li><a href="pricing.html">Pricing</a></li>								
-							<li><a href="casestudies.html">Case Studies</a></li>							
-							<li><a href="testimonials.html">Testimonials</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="blog.html">Blog</a></li>
-						</ul>
-						<select class="mobile-menu">
-							<option selected="selected" value="index.html" />Home
-							<option value="software.html" />Software								
-							<option value="pricing.html" />Pricing							
-							<option value="casestudies.html" />Case Studies							
-							<option value="testimonials.html" />Testimonials							
-							<option value="about.html" />About
-							<option value="blog.html" />Blog					
-						</select>
-					</nav>
+				<!--
+				<nav class="nav-box">
+					<ul id="nav">
+						<li class="active"><a href="./index.html">Home</a>
+							<ul>
+								<li><a>1</a></li>
+								<li><a>1</a><ul>
+								<li><a>1</a></li>
+								<li><a>1</a></li>
+							</ul></li>
+							</ul>
+						</li>
+						<li><a href="software.html">Software</a></li>								
+						<li><a href="pricing.html">Pricing</a></li>								
+						<li><a href="casestudies.html">Case Studies</a></li>							
+						<li><a href="testimonials.html">Testimonials</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="blog.html">Blog</a></li>
+					</ul>
+				</nav>
+				-->
+				<?php $this->widget('application.widgets.Menu.Menu', array('_item_active'=>$this->activemenu,'_gmid'=>1,'_style'=>'style2'));?>
 				</header>
 				<!-- main -->
 				<?php echo $content;?>
@@ -64,7 +57,6 @@ require_once '_header.php';
 	$(this).attr('rel', $(this).attr('data-rel')).removeAttr('data-rel');
 	});
 	</script>	
-	<script type="text/javascript" src="<?php echo $themeUrl; ?>/js/dropdown-menu.js"></script>
 	<!--<div class="theme_settings_wrapper">
 		<a href="javascript:void(0)" id="show_settings_button"></a>
 		<div class="theme_settings_container">

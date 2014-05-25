@@ -13,6 +13,7 @@ $themeUrl = Yii::app()->theme->baseUrl;
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo $themeUrl; ?>/css/all.css" />
 <!-- get jQuery from the google apis -->
+	<?php Yii::app()->clientScript->scriptMap=array('jquery.min.js'=>false);?>
 	<script type="text/javascript" src="<?php echo $themeUrl; ?>/js/jquery171.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="./js/jquery-1.7.1.min.js"><\/script>');</script>
 	<script type="text/javascript" src="<?php echo $themeUrl; ?>/js/jquery.main.js"></script>

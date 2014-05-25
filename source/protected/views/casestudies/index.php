@@ -1,6 +1,5 @@
 <?php $themeUrl = Yii::app()->theme->baseUrl;?>
 <?php 
-Yii::app()->clientScript->scriptMap=array('jquery.min.js'=>false);
 Yii::app()->getClientScript()->registerCssFile("$themeUrl/css/prettyPhoto.css");
 Yii::app()->getClientScript()->registerScriptFile("$themeUrl/js/jquery.prettyPhoto.js");
 Yii::app()->getClientScript()->registerScript(
